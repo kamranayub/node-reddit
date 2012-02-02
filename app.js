@@ -9,9 +9,9 @@
  ********************/
 
 var cli     = require('cli'),
-	http    = require('http'),
-	request = require('request'),
-	colors	= require('colors');
+	  http    = require('http'),
+	  request = require('request'),
+	  colors	= require('colors');
 
 cli.main(function (args, options) {
 	console.log("***********".rainbow);
@@ -20,10 +20,10 @@ cli.main(function (args, options) {
 
 	request('http://reddit.com/.json', function (err, res, body) {
 		if (!err && res.statusCode === 200) {
-			var reddit = JSON.parse(body),
-				stories = reddit.data.children.map(function (s) { 
-							return s.data; 
-						  });
+			var reddit  = JSON.parse(body),
+				  stories = reddit.data.children.map(function (s) { 
+							        return s.data; 
+						        });
 			
 			// Descending score
 			stories.sort(function (a, b) { return b.score - a.score; });
@@ -31,8 +31,8 @@ cli.main(function (args, options) {
 			stories.forEach(function (story) {
 				var row = "",
 					title = story.title.length > 100
-						  ? story.title.substr(0, 100) + "..." 
-						  : story.title;
+						    ? story.title.substr(0, 100) + "..." 
+						    : story.title;
 
 				// Build row
 				// [score] [title] [comments] [subreddit]
