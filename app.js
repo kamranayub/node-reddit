@@ -6,6 +6,8 @@
  * A simple CLI app that reads in Reddit's frontpage and colorizes it
  *
  * by Kamran Ayub
+ * License: WTFPL (http://sam.zoy.org/wtfpl/)
+ * Attribution is cool but not required
  ********************/
 
 var cli     = require('cli'),
